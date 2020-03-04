@@ -20,7 +20,7 @@ class UsersController < ApplicationController
             decoded_token = JWT.decode(token, secret)
             # byebug
             user = User.find(decoded_token[0]["user_id"])
-            render json: user
+            render json: user, include: [:headers, :technical_projects, :work_experiences, :educations, :technical_skills]
         end
     end
 end
