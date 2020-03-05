@@ -9,6 +9,17 @@ class UsersController < ApplicationController
         render json: @users, include: [:headers, :technical_projects, :work_experiences, :educations, :technical_skills]
     end
 
+    def show
+        @user = User.find(params[:id])
+        render json: @user
+    end
+
+    def create
+        @user = User.create(name: params[:name], username: params[:username], password: params[:password])
+
+        render json: @user
+    end
+
     def profile
         authorization_header = request.headers[:authorization]
         if !authorization_header
