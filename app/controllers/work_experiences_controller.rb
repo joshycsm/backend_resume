@@ -1,12 +1,12 @@
 class WorkExperiencesController < ApplicationController
     def index
         @work_experiences = WorkExperience.all
-        render json: @work_experiences
+        render json: @work_experiences, include: [:user]
     end
 
     def show
         @work_experience = WorkExperience.find(params[:id])
-        render json: @work_experience
+        render json: @work_experience, include: [:user]
     end
 
     def create

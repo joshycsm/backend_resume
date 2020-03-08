@@ -1,12 +1,12 @@
 class TechnicalProjectsController < ApplicationController
     def index
         @technical_projects = TechnicalProject.all
-        render json: @technical_projects
+        render json: @technical_projects, include: [:user]
     end
 
     def show
         @technical_project = TechnicalProject.find(params[:id])
-        render json: @technical_project
+        render json: @technical_project, include: [:user]
     end
 
     def create
