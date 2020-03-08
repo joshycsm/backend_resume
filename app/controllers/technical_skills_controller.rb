@@ -1,12 +1,12 @@
 class TechnicalSkillsController < ApplicationController
     def index
         @technical_skills = TechnicalSkill.all
-        render json: @technical_skills
+        render json: @technical_skills, include: [:user]
     end
 
     def show
         @technical_skill = TechnicalSkill.find(params[:id])
-        render json: @technical_skill
+        render json: @technical_skill, include: [:user]
     end
 
     def create

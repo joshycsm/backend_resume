@@ -1,12 +1,12 @@
 class EducationsController < ApplicationController
     def index
         @educations = Education.all
-        render json: @educations
+        render json: @educations, include: [:user]
     end
 
     def show
         @education = Education.find(params[:id])
-        render json: @education
+        render json: @education, include: [:user]
     end
 
     def create

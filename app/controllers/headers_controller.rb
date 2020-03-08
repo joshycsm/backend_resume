@@ -1,12 +1,12 @@
 class HeadersController < ApplicationController
     def index
     @headers = Header.all
-    render json: @headers
+    render json: @headers, include: [:user]
     end
 
     def show
         @header = Header.find(params[:id])
-        render json: @header
+        render json: @header, include: [:user]
     end
 
     def create
