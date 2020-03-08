@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is built with ruby on rails with a postgreql database.
 
-Things you may want to cover:
+It has multiple models that represent diffrent sections on the resume.
 
-* Ruby version
+The user model is the main model for this API and includes all other model info for an individual user upon successful authentication.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Thanks for reading! More clarity to come, hopefully? Continue to check back in for future updates!
